@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 import FooterComponent from "../components/Navbar/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import { AppContext } from "../contexts/AppContextprovider";
+// import SearchTerm from "../components/SearchTerm/SearchTerm";
 
 function MainLayout() {
   const { themeMode } = useContext(AppContext);
@@ -23,9 +24,12 @@ function MainLayout() {
               height: "90px",
               alignItems: "center",
               padding: "0px",
+              flexDirection: "column",
+              justifyContent: "center",
             }}
           >
             <Navbar />
+            
           </Header>
           <Content>
             <div className="dark:bg-gray-900">

@@ -1,11 +1,10 @@
 import "flowbite";
 import { useContext } from "react";
-import menuIconLight from "../../../public/menu-right-light.png";
+import menuIconLight from "../../assets/menu-right-light.png";
 import { AppContext } from "../../contexts/AppContextprovider";
 import SearchInput from "../SearchInput/SearchInput";
 const Navbar = () => {
-  const { kind, toggleTheme, themeMode } = useContext(AppContext);
-  console.log(kind);
+  const { toggleTheme, themeMode } = useContext(AppContext);
   return (
     <nav className="bg-white h-full dark:bg-gray-900 w-full border-b border-gray-200 dark:border-gray-600">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
@@ -72,7 +71,7 @@ const Navbar = () => {
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 md:pe-4"
           id="navbar-sticky"
         >
-          <ul className=" flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="bg-white flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li className=" bg-gray-200 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 border-none md:border-b">
               <SearchInput />
             </li>
