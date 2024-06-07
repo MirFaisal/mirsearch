@@ -5,25 +5,25 @@ import Loader from "../../components/Footer/Loader";
 import SearchCard from "../../components/SearchCard/SearchCard";
 import { AppContext } from "../../contexts/AppContextprovider";
 const Home = () => {
-  const { loading, getResult, setSearchTrem, searchTrem } =
+  const { loading, getResult, setSearchTrem, searchTrem, quary } =
     useContext(AppContext);
   const pathName = useLocation().pathname;
 
   useEffect(() => {
     if (pathName === "/") {
       setSearchTrem(pathName);
-      getResult("youtube");
+      getResult();
     } else if (pathName === "/all") {
       setSearchTrem("/search");
-      getResult("youtube");
+      getResult();
     } else if (pathName === "/images") {
       setSearchTrem(pathName);
-      getResult("youtube");
+      getResult();
     } else if (pathName === "/videos") {
       setSearchTrem(pathName);
-      getResult("Elon Mask");
+      getResult();
     }
-  }, [pathName, searchTrem]);
+  }, [pathName, searchTrem, setSearchTrem, quary]);
 
   // console.log(pathName);
 
