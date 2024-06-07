@@ -5,19 +5,25 @@ import Loader from "../../components/Footer/Loader";
 import SearchCard from "../../components/SearchCard/SearchCard";
 import { AppContext } from "../../contexts/AppContextprovider";
 const Home = () => {
-  const { loading, getResult } = useContext(AppContext);
+  const { loading, getResult, setSearchTrem, searchTrem } =
+    useContext(AppContext);
   const pathName = useLocation().pathname;
+
   useEffect(() => {
     if (pathName === "/") {
-      getResult("youtube", "search");
+      setSearchTrem(pathName);
+      getResult("youtube");
     } else if (pathName === "/all") {
-      getResult("youtube", "search");
-    } else if (pathName === "/image") {
-      getResult("banana", "images");
-    } else if (pathName === "/video") {
-      getResult("google", "videos");
+      setSearchTrem("/search");
+      getResult("youtube");
+    } else if (pathName === "/images") {
+      setSearchTrem(pathName);
+      getResult("youtube");
+    } else if (pathName === "/videos") {
+      setSearchTrem(pathName);
+      getResult("Elon Mask");
     }
-  }, [pathName]);
+  }, [pathName, searchTrem]);
 
   // console.log(pathName);
 
@@ -26,12 +32,16 @@ const Home = () => {
   }
 
   switch (pathName) {
-    // case "/":
-    //   return <SearchCard />;
-    // case "/all":
-    //   return <SearchCard />;
-    // case "/image":
-    //   return <SearchCard />;
+    case "/":
+      return <SearchCard />;
+    case "/all":
+      return <SearchCard />;
+    case "/images":
+      return <SearchCard />;
+    case "/videos":
+      return <SearchCard />;
+    default:
+      return <SearchCard />;
   }
 };
 

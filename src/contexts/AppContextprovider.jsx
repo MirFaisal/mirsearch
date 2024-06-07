@@ -6,13 +6,13 @@ const AppContextProvider = ({ children }) => {
   const [themeMode, setThemeMode] = useState(false);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState([]);
-  // const [searchTrem, setSearchTrem] = useState();
+  const [searchTrem, setSearchTrem] = useState("search");
 
   // console.log(searchTrem);
   const BASE_URL = `https://google.serper.dev/`;
   const toggleTheme = () => setThemeMode(!themeMode);
 
-  const getResult = async (quary, searchTrem) => {
+  const getResult = async (quary) => {
     console.log(searchTrem);
     setLoading(true);
      var raw = JSON.stringify({
@@ -32,7 +32,7 @@ const AppContextProvider = ({ children }) => {
     };
 
     try {
-      const response = await fetch(`${BASE_URL}images`, options);
+      const response = await fetch(`${BASE_URL}${searchTrem}`, options);
       const result = await response.json();
       console.log(result);
       setResult(result);
@@ -48,7 +48,8 @@ const AppContextProvider = ({ children }) => {
     getResult,
     result,
     loading,
-    
+    setSearchTrem,
+    searchTrem,
   };
   return (
     <AppContext.Provider value={provideValue}>{children}</AppContext.Provider>

@@ -1,5 +1,4 @@
 import "flowbite";
-import SearchTerm from "../SearchTerm/SearchTerm";
 const SearchInput = () => {
   return (
     <div className="flex flex-col max-w-lg mx-auto">
@@ -32,7 +31,6 @@ const SearchInput = () => {
           Search
         </button>
       </div>
-      <SearchTerm />
     </div>
   );
 };
