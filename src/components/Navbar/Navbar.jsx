@@ -6,7 +6,7 @@ import SearchInput from "../SearchInput/SearchInput";
 const Navbar = () => {
   const { toggleTheme, themeMode } = useContext(AppContext);
   return (
-    <nav className="bg-white dark:bg-gray-900 w-full border-b border-gray-200 dark:border-gray-600">
+    <nav className="bg-white  dark:bg-gray-900 w-full border-b border-gray-200 dark:border-gray-600">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
         {/* Navbar Barand or logo */}
         <a className="flex items-center space-x-3 rtl:space-x-reverse ps-4 md:ps-0">
